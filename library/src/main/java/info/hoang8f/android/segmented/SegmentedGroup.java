@@ -185,7 +185,9 @@ public class SegmentedGroup extends RadioGroup {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 TransitionDrawable current = mDrawableMap.get(checkedId);
-                current.reverseTransition(200);
+                if (current != null) {
+                    current.reverseTransition(200);
+                }
                 if (mLastCheckId != 0) {
                     TransitionDrawable last = mDrawableMap.get(mLastCheckId);
                     if (last != null) last.reverseTransition(200);
