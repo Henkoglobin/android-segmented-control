@@ -1,9 +1,6 @@
 package info.hoang8f.mymo.segmented.demo;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +9,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import info.hoang8f.android.segmented.AwesomeRadioButton;
 import info.hoang8f.android.segmented.SegmentedGroup;
 
@@ -40,7 +40,7 @@ public class SampleActivity extends AppCompatActivity {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_sample, container, false);
 
@@ -52,13 +52,15 @@ public class SampleActivity extends AppCompatActivity {
 ////            segmented3.setTintColor(Color.parseColor("#FFD0FF3C"), Color.parseColor("#FF7B07B2"));
 //
 
-            segmented5 = (SegmentedGroup) rootView.findViewById(R.id.segmented5);
-            Button addBtn = (Button) rootView.findViewById(R.id.add_segmented);
-            Button removeBtn = (Button) rootView.findViewById(R.id.remove_segmented);
+            segmented5 = rootView.findViewById(R.id.segmented5);
+            Button addBtn = rootView.findViewById(R.id.add_segmented);
+            Button removeBtn = rootView.findViewById(R.id.remove_segmented);
+            Button clearBtn = rootView.findViewById(R.id.clear_segmented);
 
             //Set listener for button
             addBtn.setOnClickListener(this);
             removeBtn.setOnClickListener(this);
+            clearBtn.setOnClickListener(this);
 
             //Set change listener on SegmentedGroup
 //            segmented2.setOnCheckedChangeListener(this);
@@ -103,9 +105,16 @@ public class SampleActivity extends AppCompatActivity {
                 case R.id.remove_segmented:
                     removeButton(segmented5);
                     break;
+                case R.id.clear_segmented:
+                    clearCheck(segmented5);
+                    break;
                 default:
                     // Nothing to do
             }
+        }
+
+        private void clearCheck(SegmentedGroup group) {
+            group.clearCheck();
         }
 
         private void addButton(SegmentedGroup group) {

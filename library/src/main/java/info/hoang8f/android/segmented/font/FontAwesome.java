@@ -1,11 +1,12 @@
 package info.hoang8f.android.segmented.font;
 
-import android.support.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
 import java.util.Map;
+
+import androidx.annotation.StringDef;
 
 /**
  * Maps FontAwesome Icon Codes to unicode characters, allowing its use in AwesomeTextView.

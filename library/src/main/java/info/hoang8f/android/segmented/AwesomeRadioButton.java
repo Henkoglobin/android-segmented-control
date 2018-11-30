@@ -2,10 +2,10 @@ package info.hoang8f.android.segmented;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.RadioButton;
 
+import androidx.annotation.Nullable;
 import info.hoang8f.android.segmented.font.BootstrapTextView;
 import info.hoang8f.android.segmented.utils.BootstrapText;
 import info.hoang8f.android.segmented.utils.IconResolver;

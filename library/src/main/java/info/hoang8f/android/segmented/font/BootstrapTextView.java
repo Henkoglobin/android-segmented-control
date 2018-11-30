@@ -1,7 +1,7 @@
 package info.hoang8f.android.segmented.font;
 
-import android.support.annotation.Nullable;
 
+import androidx.annotation.Nullable;
 import info.hoang8f.android.segmented.utils.BootstrapText;
 
 
@@ -20,7 +20,8 @@ public interface BootstrapTextView {
     /**
      * @return the current BootstrapText, or null if none exists
      */
-    @Nullable BootstrapText getBootstrapText();
+    @Nullable
+    BootstrapText getBootstrapText();
 
     /**
      * Sets the view to display the given markdown text, by constructing a BootstrapText. e.g.
